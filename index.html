@@ -46,7 +46,7 @@
 	</script>
 	<style type="text/css">
 		body {
-			background-image: url('natal3.png');
+			background-image: url('natal.png');
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-attachment: fixed;
@@ -55,29 +55,40 @@
 			font-family: Arial, sans-serif;
 		}
 
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 10px;
+			text-align: center;
+			color: #fff;
+		}
+
 		td {
-			width: 50px;
+			width: 10%;
 			height: 50px;
 			border: 3px solid #000;
 		}
 
 		table {
-			margin-top: 10px;
-			margin-bottom: 10px;
+			margin: 10px auto;
+			width: 100%;
+			height: auto;
+			max-width: 500px;
 		}
 
 		.btn {
-			width: 50px;
-			height: 50px;
-			font-size: 30px;
+			width: 100%;
+			height: 100%;
+			font-size: calc(1em + 0.5vw);
 			background-color: #f1f1f1;
+			box-sizing: border-box;
 		}
 
 		#link-premio {
 			display: none;
 			margin-top: 20px;
 			text-align: center;
-			font-size: 20px;
+			font-size: calc(1em + 1vw);
 			font-weight: bold;
 			color: green;
 		}
@@ -94,29 +105,31 @@
 	</style>
 </head>
 <body>
-	<div style="text-align: center; font-size: 45px; font-weight: bolder;">DESAFIO DE NATAL PARA PEDRO</div>
-	<div style="text-align: center; font-size: 45px; font-weight: bolder;">Cuidado. Campo Minado!</div>
-	<div style="text-align: center; font-size: 45px; font-weight: bolder;">Acerte todas as posições e ganhe uma surpresa!!!!</div>
-
-	<table align="center">
-		<script type="text/javascript">
-			let k = 0;
-			for (let i = 0; i < 5; i++) {
-				document.write('<tr>');
-				for (let j = 0; j < 5; j++) {
-					k++;
-					const num = minasFixas.includes(k) ? 0 : Math.floor(Math.random() * 2) + 1;
-					document.write('<td><input type="button" value="X" class="btn" id="' + k + '" onclick="controle(' + num + ',' + k + ');"></td>');
+	<div class="container">
+		<div style="font-size: calc(2em + 1vw); font-weight: bolder; border-color: lightgoldenrodyellow">DESAFIO DE NATAL PARA PEDRO</div>
+		<div style="font-size: calc(1.5em + 1vw); font-weight: bolder;">Cuidado. Campo Minado!</div>
+		<div style="font-size: calc(1.5em + 1vw); font-weight: bolder;">Acerte todas as posições e ganhe uma surpresa!!!!</div>
+	
+		<table>
+			<script type="text/javascript">
+				let k = 0;
+				for (let i = 0; i < 5; i++) {
+					document.write('<tr>');
+					for (let j = 0; j < 5; j++) {
+						k++;
+						const num = minasFixas.includes(k) ? 0 : Math.floor(Math.random() * 2) + 1;
+						document.write('<td><input type="button" value="X" class="btn" id="' + k + '" onclick="controle(' + num + ',' + k + ');"></td>');
+					}
+					document.write('</tr>');
 				}
-				document.write('</tr>');
-			}
-		</script>
-	</table>
+			</script>
+		</table>
 
-	<div id="link-premio" style="text-align: center;">
-		<a href="https://www.seu-premio.com" target="_blank">Clique aqui para receber seu prêmio!</a>
+		<div id="link-premio">
+			<a href="https://1drv.ms/i/c/22f137a5909f2356/ESyJUFmN3PlOuIkQs64FsYsBFm0leVkKrRLuCHTJKC9NsA?e=t54UbU" target="_blank">Clique aqui para receber seu prêmio!</a>
+		</div>
+
+		<div style="font-size: calc(0.8em + 0.2vw); font-weight: bolder;">Desenvolvido por: Tio Jorginho</div>
 	</div>
-
-	<div style="text-align: center; font-size: 10px; font-weight: bolder;">Desenvolvido por: Tio Jorginho</div>
 </body>
 </html>
